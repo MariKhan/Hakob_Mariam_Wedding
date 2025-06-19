@@ -40,40 +40,6 @@
         margin: 100px 0 0 0;
     }
 
-    /* .infinity-wrap {
-        position: relative;
-        display: inline-block;
-        line-height: 1;
-    } */
-
-    /* .infinity {
-        font-family: 'Great Vibes', cursive;
-        font-size: 8em;
-        color: #f7c59f;
-        z-index: 1;
-    }
-
-    .name {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 4em;
-        color: #f7c59f;
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
-        z-index: 2;
-        white-space: nowrap;
-    }
-
-    .name-left {
-        left: 5%;
-        transform: translate(-30%, -155%);
-    }
-
-    .name-right {
-        right: -88%;
-        transform: translate(15%, 82%);
-    } */
-
     .infinity-wrap {
         display: flex;
         flex-direction: column;

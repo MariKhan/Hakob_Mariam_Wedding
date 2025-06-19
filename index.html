@@ -22,14 +22,6 @@
             <source src="music/wedding-song.mp3" type="audio/mp3" />
         </audio>
 
-        <!-- <section class="hero fade-in">
-            <div class="infinity-wrap">
-                <span class="infinity">∞</span>
-                <span class="name name-left">Հակոբ</span>
-                <span class="name name-right">Մարիամ</span>
-            </div>
-        </section> -->
-
         <section class="hero fade-in">
             <div class="infinity-wrap">
                 <span class="name name-left">Հակոբ</span>
@@ -39,7 +31,12 @@
         </section>
 
         <section class="play">
-            <button id="play-scroll" class="play-button">▶</button>
+            <!-- Вместо ▶ -->
+            <button id="play-scroll" class="play-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="#f7c59f">
+                    <path d="M8 5v14l11-7z" />
+                </svg>
+            </button>
         </section>
 
         <section id="details" class="info fade-in">
@@ -101,11 +98,11 @@
             const now = Date.now();
             const diff = targetDate - now;
 
-            if (diff < 0) {
-                countdownEl.innerHTML = '<span>🎉</span> <span>Հարսանիքը տեղի ունեցավ!</span>';
-                clearInterval(timerInterval);
-                return;
-            }
+            // if (diff < 0) {
+            //     countdownEl.innerHTML = '<span>🎉</span> <span>Հարսանիքը տեղի ունեցավ!</span>';
+            //     clearInterval(timerInterval);
+            //     return;
+            // }
 
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
