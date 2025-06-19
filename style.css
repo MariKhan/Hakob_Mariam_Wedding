@@ -40,13 +40,13 @@
         margin: 100px 0 0 0;
     }
 
-    .infinity-wrap {
+    /* .infinity-wrap {
         position: relative;
         display: inline-block;
         line-height: 1;
-    }
+    } */
 
-    .infinity {
+    /* .infinity {
         font-family: 'Great Vibes', cursive;
         font-size: 8em;
         color: #f7c59f;
@@ -72,6 +72,44 @@
     .name-right {
         right: -88%;
         transform: translate(15%, 82%);
+    } */
+
+    .infinity-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        flex-wrap: wrap;
+        padding: 2rem 1rem;
+    }
+
+    .infinity {
+        font-family: 'Great Vibes', cursive;
+        font-size: 8em;
+        color: #f7c59f;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .name {
+        font-size: 3em;
+        color: #f7c59f;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+        .infinity {
+            font-size: 5em;
+        }
+
+        .name {
+            font-size: 2em;
+        }
+
+        .infinity-wrap {
+            flex-direction: column;
+        }
     }
 
     h1 {
@@ -79,7 +117,7 @@
     }
 
     .hero {
-        padding: 15% 0;
+        padding: 7% 0;
         color: #f7c59f;
     }
 
@@ -301,7 +339,7 @@
         }
 
         .hero {
-            padding: 30% 0 10% 0;
+            padding: 30% 0 0 0;
         }
 
         /* 
