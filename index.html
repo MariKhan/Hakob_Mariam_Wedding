@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="hy">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hakob & Mariam Wedding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@400;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+
+</head>git commit
+
+<body>
+    <div class="background"></div>
+    <div class="overlay"></div>
+
+    <div class="content">
+        <h2>ՀԱՐՍԱՆՅԱՑ ՀՐԱՎԵՐ</h2>
+        <audio id="wedding-music" loop>
+            <source src="music/wedding-song.mp3" type="audio/mp3" />
+        </audio>
+
+        <section class="hero fade-in">
+            <div class="infinity-wrap">
+                <span class="infinity">∞</span>
+                <span class="name name-left">Հակոբ</span>
+                <span class="name name-right">Մարիամ</span>
+            </div>
+        </section>
+
+        <section class="play">
+            <button id="play-scroll" class="play-button">▶</button>
+        </section>
+
+        <section id="details" class="info fade-in">
+            <h3>Հարսանիքին մնաց</h3>
+            <div id="countdown"></div>
+
+            <h2>Սիրելի հյուրեր</h2>
+            <p>Սիրով հրավիրում ենք Ձեզ՝ կիսելու մեզ հետ մեր կյանքի կարևորագույն օրերից մեկը, որը տեղի կունենա</p>
+        </section>
+
+        <h1>19.07.2025</h1>
+
+
+
+
+        <section class="schedule">
+            <h1 style="color: f7c59f; text-shadow: 1px 1px 10px;">Օրվա ծրագիր</h1>
+
+
+            <img src="images/14_35_02.png" alt="Wedding Rings" class="wedding-photo" />
+            <h3><strong>ՊՍԱԿԱԴՐՈՒԹՅԱՆ <br> ԱՐԱՐՈՂՈՒԹՅՈՒՆ</strong></h3>
+            <h2>13:00</h1>
+                <h2>Սուրբ Աստվածածին Եկեղեցի</h2>
+                <p>Ք. Գավառ</p>
+
+
+                <img src="images/Harts.png" alt="Wedding Rings" class="wedding-photo" />
+                <h3><strong>ՀԱՐՍԱՆՅԱՑ <br> ՀԱՆԴԻՍՈՒԹՅՈՒՆ</strong></h3>
+                <h2>17:00</h2>
+                <h2>BAYAZET HALL</h2>
+                <p>Ք. Գավառ, Սայադյան 112/2</p>
+                <h1 style="color: f7c59f; text-shadow: 1px 1px 10px;"> Սիրով՝ <br>
+                    Հակոբ և Մարիամ</h1>
+
+        </section>
+
+
+
+    </div>
+
+    <script>
+        const fadeElements = document.querySelectorAll('.fade-in');
+
+        const appearOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        fadeElements.forEach(el => appearOnScroll.observe(el));
+
+        const targetDate = new Date('July 19, 2025 00:00:00').getTime();
+        const countdownEl = document.getElementById('countdown');
+
+        function updateTimer() {
+            const now = Date.now();
+            const diff = targetDate - now;
+
+            if (diff < 0) {
+                countdownEl.innerHTML = '<span>🎉</span> <span>Հարսանիքը տեղի ունեցավ!</span>';
+                clearInterval(timerInterval);
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            countdownEl.innerHTML = `
+        <div class="time-box">
+          <span class="number">${days}</span>
+          <span class="label">օր</span>
+        </div>
+        <div class="time-box">
+          <span class="number">${hours.toString().padStart(2, '0')}</span>
+          <span class="label">ժամ</span>
+        </div>
+        <div class="time-box">
+          <span class="number">${minutes.toString().padStart(2, '0')}</span>
+          <span class="label">րոպե</span>
+        </div>
+        <div class="time-box">
+          <span class="number">${seconds.toString().padStart(2, '0')}</span>
+          <span class="label">վայրկյան</span>
+        </div>
+      `;
+        }
+
+        updateTimer();
+        const timerInterval = setInterval(updateTimer, 1000);
+
+        const music = document.getElementById('wedding-music');
+        const playScrollBtn = document.getElementById('play-scroll');
+        let musicStarted = false;
+        let isPlaying = false;
+
+        playScrollBtn.addEventListener('click', () => {
+            if (!musicStarted || music.paused) {
+                music.play().then(() => {
+                    musicStarted = true;
+                    isPlaying = true;
+                    playScrollBtn.innerText = '⏸️';
+                }).catch(err => {
+                    console.error('Չհաջողվեց նվագել երաժշտությունը:', err);
+                });
+            } else {
+                music.pause();
+                isPlaying = false;
+                playScrollBtn.innerText = '▶️';
+            }
+
+            if (!playScrollBtn.classList.contains('scrolled')) {
+                document.getElementById('details').scrollIntoView({ behavior: 'smooth' });
+                playScrollBtn.classList.add('scrolled');
+                playScrollBtn.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>

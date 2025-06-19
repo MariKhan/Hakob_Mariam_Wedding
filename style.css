@@ -1,0 +1,337 @@
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        scroll-behavior: smooth;
+        font-family: 'Noto Serif Armenian', serif;
+        color: #f7c59f;
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        background-image: url('images/slider3.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        margin: 100px 0 0 0;
+    }
+
+    .infinity-wrap {
+        position: relative;
+        display: inline-block;
+        line-height: 1;
+    }
+
+    .infinity {
+        font-family: 'Great Vibes', cursive;
+        font-size: 8em;
+        color: #f7c59f;
+        z-index: 1;
+    }
+
+    .name {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 4em;
+        color: #f7c59f;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        z-index: 2;
+        white-space: nowrap;
+    }
+
+    .name-left {
+        left: 5%;
+        transform: translate(-30%, -155%);
+    }
+
+    .name-right {
+        right: -88%;
+        transform: translate(15%, 82%);
+    }
+
+    h1 {
+        font-size: 9em;
+    }
+
+    .hero {
+        padding: 15% 0;
+        color: #f7c59f;
+    }
+
+    .play {
+        padding: 0 0 0 65px;
+    }
+
+    h2 {
+        font-size: 2.5em;
+        color: #f7c59f;
+    }
+
+    .info {
+        width: 600px;
+        margin: 0 auto;
+    }
+
+    .info h2,
+    .info h3,
+    .info p {
+        color: white;
+    }
+
+    .info h1 {
+        font-size: 5em;
+    }
+
+
+    .play-button {
+        /* position: fixed; */
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        font-size: 3em;
+        color: #f7c59f;
+        background: none;
+        border: none;
+        cursor: pointer;
+        animation: pulse 2s infinite;
+        transition: opacity 0.5s;
+
+    }
+
+    .play-button.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: translateX(-50%) scale(1);
+        }
+
+        50% {
+            transform: translateX(-50%) scale(1.2);
+        }
+
+        100% {
+            transform: translateX(-50%) scale(1);
+        }
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(0px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+
+    .fade-in h2 {
+        padding-top: 50px;
+        font-size: 25px;
+        color: #fff;
+    }
+
+    .fade-in h3 {
+        padding-top: 100px;
+        font-size: 25px;
+        color: #f7c59f;
+    }
+
+    .fade-in p {
+        font-size: 20px;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .schedule h1 {
+        font-weight: normal;
+        padding-top: 50px;
+        font-size: 25px;
+        font-style: italic;
+        color: #f7c59f;
+        text-shadow:
+            0 0 5px #fff,
+            0 0 10px #f7c59f,
+            0 0 15px #f7c59f,
+            0 0 20px #fff;
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .schedule h2 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .schedule p {
+        font-size: 15px;
+        font-weight: normal;
+        color: white;
+    }
+
+    #countdown {
+        font-size: 2em;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        color: white;
+    }
+
+    #countdown .time-box {
+        min-width: 60px;
+    }
+
+    #countdown .time-box span {
+        display: block;
+    }
+
+    #countdown .number {
+        font-weight: bold;
+        font-size: 3em;
+    }
+
+    #countdown .label {
+        font-size: 0.8em;
+        letter-spacing: 0.05em;
+    }
+
+    .wedding-photo {
+        width: 330px;
+        height: 300px;
+        padding: 40px 0 0 40px;
+    }
+
+
+    @media (max-width: 768px) {
+        /* .infinity {
+            font-size: 4em;
+        } */
+
+        /* .name {
+            font-size: 2em;
+        } */
+
+        /* 
+        .name-left {
+            left: 0;
+            transform: translate(-10%, -130%);
+        }
+
+        .name-right {
+            right: 0;
+            transform: translate(10%, 100%);
+        } */
+
+        h1 {
+            font-size: 4em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        .info {
+            width: 90%;
+            padding: 0 10px;
+        }
+
+        .info h1 {
+            font-size: 3em;
+        }
+
+        .play-button {
+            font-size: 2em;
+            /* bottom: 20px; */
+        }
+
+        #countdown {
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2em;
+        }
+
+        #countdown .number {
+            font-size: 2em;
+        }
+
+        .schedule h1 {
+            font-size: 2em;
+        }
+
+        .schedule h2 {
+            font-size: 1.3em;
+        }
+
+        .schedule p {
+            font-size: 1em;
+        }
+
+        .wedding-photo {
+            width: 90%;
+            height: auto;
+            padding: 0;
+        }
+
+        .hero {
+            padding: 30% 0 10% 0;
+        }
+
+        /* 
+        .play {
+            padding-top: 0;
+        } */
+    }
+
+    @media (min-width: 320px) {
+        .play {
+
+            padding-top: 65px;
+        }
+
+        .fade-in p {
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        .schedule h2 {
+            font-size: 1em;
+        }
+
+    }
+
+    .play-button.hidden {
+        opacity: 0;
+        pointer-events: none;
+        display: none;
+    }
