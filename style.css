@@ -125,6 +125,7 @@
         cursor: pointer;
         animation: pulse 2s infinite;
         transition: opacity 0.5s;
+        font-family: 'Segoe UI Symbol', 'Segoe UI Emoji', Arial, sans-serif;
 
     }
 
