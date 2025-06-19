@@ -236,24 +236,6 @@
 
 
     @media (max-width: 768px) {
-        /* .infinity {
-            font-size: 4em;
-        } */
-
-        /* .name {
-            font-size: 2em;
-        } */
-
-        /* 
-        .name-left {
-            left: 0;
-            transform: translate(-10%, -130%);
-        }
-
-        .name-right {
-            right: 0;
-            transform: translate(10%, 100%);
-        } */
 
         h1 {
             font-size: 4em;
@@ -309,10 +291,6 @@
             padding: 30% 0 0 0;
         }
 
-        /* 
-        .play {
-            padding-top: 0;
-        } */
     }
 
     @media (min-width: 320px) {

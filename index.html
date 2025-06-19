@@ -157,6 +157,15 @@
                 playScrollBtn.classList.add('hidden');
             }
         });
+
+        document.addEventListener("visibilitychange", () => {
+            const music = document.getElementById('wedding-music');
+            if (document.hidden && !music.paused) {
+                music.pause();
+                playScrollBtn.innerHTML = playIcon;
+            }
+        });
+
     </script>
 </body>
 
